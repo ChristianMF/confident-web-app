@@ -3,16 +3,16 @@ const dialogflow = require('dialogflow');
 const structjson = require('./structjson');
 const config = require('../config/keys');
 
-const projectID = config.googleProjectID;
-
+const projectId = config.googleProjectID;
+const sessionId = config.dialogFlowSessionID;
+const languageCode = config.dialogFlowSessionLanguageCode;
 const credentials = {
     client_email: config.googleClientEmail,
     private_key: config.googlePrivateKey
-}
+};
 
-const sessionClient = new dialogflow.SessionsClient({projectID: projectID, credentials: credentials});
-
-const sessionPath = sessionClient.sessionPath(config.googleProjectID, config.dialogFlowSessionID);
+const sessionClient = new dialogflow.SessionsClient({projectId, credentials});
+const sessionPath = sessionClient.sessionPath(projectId, sessionId);
 
 module.exports = {
     textQuery: async function(text, parameters = {}) {
