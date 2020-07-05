@@ -21,7 +21,7 @@ require('./routes/fulfillmentRoutes')(app);
 
 if(process.env.NODE_ENV === 'production') {
     // js and css files. Frontend.
-    app.use(express.static('client/built'));
+    app.use(express.static('client/build'));
 
     // index.html for all page routes. Beacuse of this, server will know which page to load.
     const path = require('path');
