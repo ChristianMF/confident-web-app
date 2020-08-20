@@ -10,10 +10,10 @@ import Chatbot from './chatbot/Chatbot';
 const App = () => (
         <div>
             <BrowserRouter>
-                <div className="container">
+                <div className="container" style={{width: '100%'}}>
                     <Header/>
                     <Route exact path="/" component={Landing} />
-                    <Route exact path="/about" component={About} />
+                    <Route exact path="/about" component={About}/>
                     <Route exact path="/shop" component={Shop} />
                     <Chatbot/>
                 </div>

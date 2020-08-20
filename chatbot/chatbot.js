@@ -30,7 +30,7 @@ module.exports = {
                     // The query to send to the dialogflow agent
                     text: text,
                     // The language used by the client
-                    languageCode: config.dialogFlowSessionLanguageCode,
+                    languageCode: languageCode,
                 },
             },
             queryParams: {
@@ -56,7 +56,7 @@ module.exports = {
                     name: event,
                     parameters: structjson.jsonToStructProto(parameters),
                     // The language used by the client
-                    languageCode: config.dialogFlowSessionLanguageCode,
+                    languageCode: languageCode,
                 },
             },
         };

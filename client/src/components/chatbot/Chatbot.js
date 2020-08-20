@@ -99,6 +99,9 @@ class Chatbot extends Component {
 
     componentDidUpdate() {
         this.messagesEnd.scrollIntoView({behaviour: "smooth"});
+        if ( this.talkInput ) {
+            this.talkInput.focus();
+        }
     }
 
     _handleQuickReplyPayload(event, payload, text) {
@@ -108,7 +111,8 @@ class Chatbot extends Component {
         //When a quick reply is selected, it could start an event. Events are set here.
         switch(payload) {
             case 'training_darDatos':
-                this.df_event_query('darDatos')
+                this.df_event_query('darDatos');
+                this.df_text_query(text);
                 break;
             default:
                 this.df_text_query(text);
@@ -171,14 +175,14 @@ class Chatbot extends Component {
     render() {
         return (
             <div style={{float: 'center'}}>
-                <div id="chatbot" style={{ height: 388, width: '100%', overflow: 'auto'}}>
+                <div id="chatbot" style={{ paddingLeft: '2%', paddingRight: '2%', height: 488, width: '100%', overflow: 'auto'}}>
                     {this.renderMessages(this.state.messages)}
                     <div  ref={(el) => {this.messagesEnd = el;}}
 
                         style={{float: 'left', clear: "both"}}>
                     </div>
                 </div>
-                <div className="col s12">
+                <div className="col s12" style={{margin: 0, paddingLeft: '5%', paddingRight: '5%'}}>
                     <input style={{margin: 0, paddingLeft: '1%', paddingRight: '1%', width: '98%'}} placeholder="Escribe..." type="text" ref={(input) => {this.talkInput = input; }} onKeyPress={this._handleInputKeyPress} autoFocus />
                 </div>
             </div>

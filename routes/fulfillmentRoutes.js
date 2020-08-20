@@ -10,14 +10,17 @@ module.exports = app => {
 
         //Insert the function which will add info. Those that have fulfiilment from db, should be async.
 
+        //1
         function fallback(agent) {
             agent.add(`No comprendi`);
             agent.add(`Lo puedes repetir`);
         }
 
+        //2
         async function estado(agent) {
-            Demand.findOne({'estado' /*intent*/: agent.parameters.estado /*entity or parameter*/}, function(err, estado) {
-                //Reister in db.
+            //Save in a db
+            Demand/*model name*/.findOne({'estado': agent.parameters.estado/*entity or parameter*/}, function(err, estado/*function name*/) {
+                //Register in db.
                 if (estado != null) {
                     estado.counter++;
                     estado.save()
@@ -26,15 +29,12 @@ module.exports = app => {
                     demand.save();
                 }
             });
-
-            //Look if we have the register in db
-
+            //Look if we have the record in db
             //If not
             let responseText = `${agent.parameters.estado}.
                 No lo tenemos.`;
-
             //If yes
-            let estados = await Estados.findOne({'estado': agent.parameters.estado});
+            let estados = await Estados/*model name*/.findOne({'estado': agent.parameters.estado/*entity or parameter*/});
             if(estados !== null) {
                 responseText = `${agent.parameters.estado}.
                 Aquí hay más información ${estados.link}
@@ -49,9 +49,7 @@ module.exports = app => {
         let intentMap = new Map();
 
         //Describe which intent will match which function.
-
         intentMap.set('Default Fallback Intent', fallback);
-
         intentMap.set('estado', estado);
 
         agent.handleRequest(intentMap);

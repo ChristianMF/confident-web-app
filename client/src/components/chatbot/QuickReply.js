@@ -11,7 +11,7 @@ const QuickReply = (props) => {
                     props.reply.structValue.fields.text.stringValue
                 )
             }>
-                {props.reply.structValue.fields.text.stringValue}
+                {props.reply.structValue.fields.option.stringValue}
             </a>
         );
     } else {
