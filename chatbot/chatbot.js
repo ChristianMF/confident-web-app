@@ -18,6 +18,7 @@ const sessionClient = new dialogflow.SessionsClient({projectId, credentials});
 //Import Schema that want to save data.
 const Registration = mongoose.model('registration');
 const Textt = mongoose.model('text');
+const Functionality = mongoose.model('functionality');
 
 module.exports = {
     textQuery: async function(text, userID, parameters = {}) {
@@ -65,18 +66,6 @@ module.exports = {
         return responses;
     }, 
 
-    findCoordinates: () => {
-        navigator.geolocation.getCurrentPosition(
-          position => {
-            const location = JSON.stringify(position);
-    
-            this.setState({ location });
-          },
-          error => Alert.alert(error.message),
-          { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
-        );
-      },
-
     handleAction: function(responses) {
         let self = module.exports;
         let queryResult = responses[0].queryResult;
@@ -84,9 +73,13 @@ module.exports = {
         //When a intent asks for data about the user, the action(Dialogflow) & schema(Mongo) is set here, in order to save to db.
         //If want to creat a new schema, please first register it in folder "models", then import it here.
         switch(queryResult.action) {
-            case 'darDatos':
+            case '1.1.1':
                 if (queryResult.allRequiredParamsPresent) {
                     self.saveRegistration(queryResult.parameters.fields);
+                }
+            case '1.2.1':
+                if (queryResult.allRequiredParamsPresent) {
+                    self.saveFunctionality(queryResult.parameters.fields);
                 }
                 break;
         }
@@ -98,10 +91,11 @@ module.exports = {
     //1
     saveRegistration: async function(fields) {
         const registration = new Registration({
-            name: fields.name.structValue.fields.name.stringValue,
-            city: fields.city.stringValue,
-            email: fields.email.stringValue,
-            registerDate: Date.now()
+            name: fields.nombre.stringValue,
+            age: fields.edad.stringValue,
+            gender: fields.genero.stringValue,
+            community: fields.comunidad.stringValue,
+            registrationDate: Date.now()
         });
         try {
             let reg = await registration.save();
@@ -123,6 +117,19 @@ module.exports = {
         } catch (err){
             console.log(err);
         }
-    }
+    },
+    //3
+    saveFunctionality: async function(fields) {
+        const functionality = new Functionality({
+            functionality: fields.sirvio.stringValue,
+            registrationDate: Date.now()
+        });
+        try {
+            let reg = await functionality.save();
+            console.log(reg);
+        } catch (err){
+            console.log(err);
+        }
+    },
 
 }

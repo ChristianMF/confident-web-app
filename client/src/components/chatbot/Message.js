@@ -1,5 +1,7 @@
 import React from 'react';
 
+import {MediaMatcher, MediaServerRender} from 'react-media-match'
+
 /*
 setAvatar(props) {
     let window.topicText = ""
@@ -18,27 +20,81 @@ setAvatar(props) {
 */
 
 const Message = (props) => (
-    <div className="col s12 m8 offset-m2 offset-l3">
-        <div className="card-panel grey lighten-5 z-depth-1">
-            <div className="row valign-wrapper">
-                {props.speaks==='bot' &&
-                <div className="col s2">
-                    <img src={ 'https://upload-icon.s3.us-east-2.amazonaws.com/uploads/icons/png/14445772001547544865-512.png' } style={{width:50, height:50}} />
+        <div>
+            <MediaServerRender predicted="desktop" hydrated>
+            <MediaMatcher
+                mobile={
+                <div className="col s12 m8 offset-m2 offset-l3">
+                    <div className="card-panel white lighten-5 z-depth-1">
+                        <div className="row valign-wrapper">
+                            {props.speaks==='bot' &&
+                            <div className="col s2" style={{paddingLeft:0}}>
+                                <img src={ 'https://i.ibb.co/q1zvRgF/13.jpg' } style={{width:90, height:110, borderRadius:'50%'}} />
+                            </div>
+                            }
+                            <div className="col s10" style={{paddingLeft:'10%'}}>
+                                <span className="black-text">
+                                    {props.text}
+                                </span>
+                            </div>
+                            {props.speaks==='user' &&
+                            <div className="col s2">
+                                {/*<a className="btn-floating btn-large waves-effect waves-light red">{props.speaks}</a>*/}
+                            </div>
+                            }
+                        </div>
+                    </div>
+                </div>}
+
+                tablet={
+                    <div className="col s12 m8 offset-m2 offset-l3">
+                        <div className="card-panel white lighten-5 z-depth-1">
+                            <div className="row valign-wrapper">
+                                {props.speaks==='bot' &&
+                                <div className="col s2" style={{paddingLeft:'2%'}}>
+                                    <img src={ 'https://i.ibb.co/q1zvRgF/13.jpg' } style={{width:105, height:130, borderRadius:'50%'}} />
+                                </div>
+                                }
+                                <div className="col s10">
+                                    <span className="black-text">
+                                        {props.text}
+                                    </span>
+                                </div>
+                                {props.speaks==='user' &&
+                                <div className="col s2">
+                                    {/*<a className="btn-floating btn-large waves-effect waves-light red">{props.speaks}</a>*/}
+                                </div>
+                                }
+                            </div>
+                        </div>
+                    </div>}
+
+                desktop={
+                <div className="col s12 m8 offset-m2 offset-l3">
+                    <div className="card-panel white lighten-5 z-depth-1">
+                        <div className="row valign-wrapper">
+                            {props.speaks==='bot' &&
+                            <div className="col s2" style={{paddingLeft:'4%'}}>
+                                <img src={ 'https://i.ibb.co/q1zvRgF/13.jpg' } style={{width:105, height:130, borderRadius:'50%'}} />
+                            </div>
+                            }
+                            <div className="col s10">
+                                <span className="black-text">
+                                    {props.text}
+                                </span>
+                            </div>
+                            {props.speaks==='user' &&
+                            <div className="col s2">
+                                {/*<a className="btn-floating btn-large waves-effect waves-light red">{props.speaks}</a>*/}
+                            </div>
+                            }
+                        </div>
+                    </div>
+                </div>}
+
+                />
+                </MediaServerRender>
                 </div>
-                }
-                <div className="col s10">
-                    <span className="black-text">
-                        {props.text}
-                    </span>
-                </div>
-                {props.speaks==='user' &&
-                <div className="col s2">
-                    <a className="btn-floating btn-large waves-effect waves-light red">{props.speaks}</a>
-                </div>
-                }
-            </div>
-        </div>
-    </div>
 );
 
 export default Message;

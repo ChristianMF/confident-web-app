@@ -3,19 +3,19 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 import Header from './Header';
 import Landing from './pages/Landing';
-import About from './pages/About';
-import Shop from './shop/Shop';
-import Chatbot from './chatbot/Chatbot';
+import Confident from './pages/Confident';
+import Contacts from './pages/Contacts';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 const App = () => (
         <div>
             <BrowserRouter>
                 <div className="container" style={{width: '100%'}}>
-                    <Header/>
+                    
                     <Route exact path="/" component={Landing} />
-                    <Route exact path="/about" component={About}/>
-                    <Route exact path="/shop" component={Shop} />
-                    <Chatbot/>
+                    <Route exact path="/confident" component={Confident}/>
+                    <Route exact path="/contacts" component={Contacts} />
+                    <Route exact path="/privacyPolicy" component={PrivacyPolicy} />
                 </div>
             </BrowserRouter>
         </div>

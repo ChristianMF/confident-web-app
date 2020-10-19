@@ -3,7 +3,7 @@ import React from 'react';
 const QuickReply = (props) => {
     if (props.reply.structValue.fields.payload) {
         return (
-            <a style={{margin: 3}} href="/" className="btn-floating btn-large waves-effect waves-light red"
+            <button style={{margin: 5, padding: 10, fontSize: 25, fontWeight: '200', borderWidth:0 ,backgroundColor:'OrangeRed', borderRadius:12, color:'white', boxShadow: '1px 1px 5px black'}} href="/"
             onClick={(event) =>
                 props.click(
                     event,
@@ -12,12 +12,12 @@ const QuickReply = (props) => {
                 )
             }>
                 {props.reply.structValue.fields.option.stringValue}
-            </a>
+            </button>
         );
     } else {
         return (
             <a style={{margin: 3}} target="_blank" href={props.reply.structValue.fields.link.stringValue}
-                className="btn-floating btn-large waves-effect waves-light red">
+                className="waves-effect waves-light btn">
                 {props.reply.structValue.fields.text.stringValue}
             </a>
         );
