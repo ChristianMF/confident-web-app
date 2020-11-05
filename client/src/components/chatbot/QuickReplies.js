@@ -38,7 +38,7 @@ class QuickReplies extends Component {
                 <div className="card-panel grey lighten-5 z-depth-1">
                     <div className="row valign-wrapper">
                         <div className="col s2" style={{paddingLeft:0}}>
-                            <img src={ 'https://i.ibb.co/q1zvRgF/13.jpg' } style={{width:90, height:110, borderRadius:'50%'}} />
+                            <img src={ require('../images/13.jpeg') } style={{width:90, height:110, borderRadius:'50%'}} />
                         </div>
                         <div id="quick-replies" className="col s10" style={{paddingLeft:'10%'}}>
                             {this.props.text && <p>
@@ -56,7 +56,7 @@ class QuickReplies extends Component {
                 <div className="card-panel grey lighten-5 z-depth-1">
                     <div className="row valign-wrapper">
                         <div className="col s2" style={{paddingLeft:'2%'}}>
-                            <img src={ 'https://i.ibb.co/q1zvRgF/13.jpg' } style={{width:105, height:130, borderRadius:'50%'}} />
+                            <img src={ require('../images/13.jpeg') } style={{width:105, height:130, borderRadius:'50%'}} />
                         </div>
                         <div id="quick-replies" className="col s10">
                             {this.props.text && <p>
@@ -74,7 +74,7 @@ class QuickReplies extends Component {
                 <div className="card-panel grey lighten-5 z-depth-1">
                     <div className="row valign-wrapper">
                         <div className="col s2" style={{paddingLeft:'4%'}}>
-                            <img src={ 'https://i.ibb.co/q1zvRgF/13.jpg' } style={{width:105, height:130, borderRadius:'50%'}} />
+                            <img src={ require('../images/13.jpeg')} style={{width:105, height:130, borderRadius:'50%'}} />
                         </div>
                         <div id="quick-replies" className="col s10">
                             {this.props.text && <p>
