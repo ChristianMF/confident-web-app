@@ -1,7 +1,7 @@
 {
-  "name": "reactbot",
+  "name": "confident",
   "version": "1.0.0",
-  "description": "React bot for webpage",
+  "description": "Confident",
   "main": "index.js",
   "engines": {
     "node": "13.8.0",
