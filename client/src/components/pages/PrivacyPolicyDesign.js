@@ -46,7 +46,7 @@ class PrivacyPolicyDesign extends Component {
         let messages = [
           {
             _id: global.sessionId,
-            text: 'Recopilación de respuestas, opciones elegidas y palabras vertidas al chat para generar reportes estadísticos y propuestas a políticas publicas',
+            text: 'Recopilación de respuestas, opciones elegidas y palabras vertidas al chat para generar reportes estadísticos y propuestas a políticas públicas',
             createdAt: new Date(),
             user: user
           }
@@ -72,7 +72,7 @@ class PrivacyPolicyDesign extends Component {
                 
                 <p style={{color: 'white', textAlign: 'justify', paddingLeft:50, paddingTop: 10, fontSize:18, textShadow: '0 0 0.1em white'}}>{'\u2B50'} Análisis de lenguaje para poder seguir actualizando el chatbot</p>
                 <p style={{color: 'white', textAlign: 'justify', paddingLeft:50, paddingTop: 10, fontSize:18, textShadow: '0 0 0.1em white'}}>{'\u2B50'} Análisis de sentimientos para la realización de estudios e investigaciones científicas</p>
-                <p style={{color: 'white', textAlign: 'justify', paddingLeft:50, paddingTop: 10, fontSize:18, textShadow: '0 0 0.1em white'}}>{'\u2B50'} Recopilación de respuestas, opciones elegidas y palabras vertidas al chat para generar reportes estadísticos y propuestas a políticas publicas</p>
+                <p style={{color: 'white', textAlign: 'justify', paddingLeft:50, paddingTop: 10, fontSize:18, textShadow: '0 0 0.1em white'}}>{'\u2B50'} Recopilación de respuestas, opciones elegidas y palabras vertidas al chat para generar reportes estadísticos y propuestas a políticas públicas</p>
 
                 <p style={{color: 'white', textAlign: 'justify', paddingTop: 10, fontSize:18, textShadow: '0 0 0.1em white'}}>En caso de que no desee que sus datos personales se utilicen para estos fines secundarios, indíquelo a continuación (presiona sobre la opción):</p>
                 <p style={{color: 'white', textAlign: 'justify', paddingTop: 10, fontSize:18, textShadow: '0 0 0.1em white'}}>No consiento que mis datos personales se utilicen para los siguientes fines:</p>
@@ -80,7 +80,7 @@ class PrivacyPolicyDesign extends Component {
                 <div style={{textAlign: 'center'}}>
                 <button type="button" onClick={this.onSend1} style={{position: 'relative', width: '80%', padding: 2, borderWidth: 3, borderColor:'gold', backgroundColor:'transparent', borderRadius:15, marginTop: 5}}><p style={{color: 'white', textAlign: 'center', textShadow: '0 0 0.1em white', fontSize: 12}}>Análisis de lenguaje para poder seguir actualizando el chatbot</p></button>
                 <button type="button" onClick={this.onSend2} style={{position: 'relative', width: '80%', padding: 2, borderWidth: 3, borderColor:'gold', backgroundColor:'transparent', borderRadius:15, marginTop: 15}}><p style={{color: 'white', textAlign: 'center', textShadow: '0 0 0.1em white', fontSize: 12}}>Análisis de sentimientos para la realización de estudios e investigaciones científicas</p></button>
-                <button type="button" onClick={this.onSend3} style={{position: 'relative', width: '80%', padding: 2, borderWidth: 3, borderColor:'gold', backgroundColor:'transparent', borderRadius:15, marginTop: 15}}><p style={{color: 'white', textAlign: 'center', textShadow: '0 0 0.1em white', fontSize: 12}}>Recopilación de respuestas, opciones elegidas y palabras vertidas al chat para generar reportes estadísticos y propuestas a políticas publicas</p></button>
+                <button type="button" onClick={this.onSend3} style={{position: 'relative', width: '80%', padding: 2, borderWidth: 3, borderColor:'gold', backgroundColor:'transparent', borderRadius:15, marginTop: 15}}><p style={{color: 'white', textAlign: 'center', textShadow: '0 0 0.1em white', fontSize: 12}}>Recopilación de respuestas, opciones elegidas y palabras vertidas al chat para generar reportes estadísticos y propuestas a políticas públicas</p></button>
                 </div>
 
                 <p style={{color: 'white', textAlign: 'justify', paddingTop: 10, fontSize:18, textShadow: '0 0 0.1em white'}}>La negativa para el uso de sus datos personales para estas finalidades no podrá ser un motivo para que le neguemos los servicios y productos que solicita o contrata con nosotros.</p>
@@ -121,7 +121,7 @@ class PrivacyPolicyDesign extends Component {
                 <p style={{color: 'white', textAlign: 'justify', paddingTop: 10, fontSize:18, textShadow: '0 0 0.1em white'}}>Le informamos que en nuestra página de internet utilizamos cookies, web beacons u otras tecnologías, a través de las cuales es posible monitorear su comportamiento como usuario de internet, así como brindarle un mejor servicio y experiencia al navegar en nuestra página. Los datos personales que recabamos a través de estas tecnologías, los utilizaremos para los siguientes fines:</p>
                 <p style={{color: 'white', textAlign: 'justify', paddingLeft:50, paddingTop: 10, fontSize:18, textShadow: '0 0 0.1em white'}}>{'\u2B50'} Análisis de lenguaje para poder seguir actualizando el chatbot</p>
                 <p style={{color: 'white', textAlign: 'justify', paddingLeft:50, paddingTop: 10, fontSize:18, textShadow: '0 0 0.1em white'}}>{'\u2B50'} Análisis de sentimientos para la realización de estudios e investigaciones científicas</p>
-                <p style={{color: 'white', textAlign: 'justify', paddingLeft:50, paddingTop: 10, fontSize:18, textShadow: '0 0 0.1em white'}}>{'\u2B50'} Para recopilación de respuestas, opciones elegidas y palabras vertidas al chat para generar reportes estadísticos y propuestas a políticas publicas</p>
+                <p style={{color: 'white', textAlign: 'justify', paddingLeft:50, paddingTop: 10, fontSize:18, textShadow: '0 0 0.1em white'}}>{'\u2B50'} Para recopilación de respuestas, opciones elegidas y palabras vertidas al chat para generar reportes estadísticos y propuestas a políticas públicas</p>
                 <p style={{color: 'white', textAlign: 'justify', paddingTop: 10, fontSize:18, textShadow: '0 0 0.1em white'}}>Los datos personales que obtenemos de estas tecnologías de rastreo son los siguientes:</p>
                 <p style={{color: 'white', textAlign: 'justify', paddingLeft:50, paddingTop: 10, fontSize:18, textShadow: '0 0 0.1em white'}}>{'\u2B50'} Asignación de un id a cada usuario</p>
                 <p style={{color: 'white', textAlign: 'justify', paddingLeft:50, paddingTop: 10, fontSize:18, textShadow: '0 0 0.1em white'}}>{'\u2B50'} Búsquedas realizadas por un usuario</p>
