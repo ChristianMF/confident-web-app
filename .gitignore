@@ -1,4 +1,2 @@
 node_modules
 .idea
-config/dev.js
-client/src/components/config/dev.js
