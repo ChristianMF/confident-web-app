@@ -4,15 +4,6 @@ const bodyParser = require("body-parser");
 const app = express();
 
 const config = require('./config/keys');
-const mongoose = require('mongoose');
-mongoose.connect(config.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true  });
-
-//Import here Schemas that want to save data.
-require('./models/Registration');
-require('./models/Text');
-require('./models/Demand');
-require('./models/Estados');
-require('./models/Functionality');
 
 app.use(bodyParser.json());
 
